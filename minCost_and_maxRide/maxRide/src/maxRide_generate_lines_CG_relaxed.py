@@ -391,8 +391,6 @@ def main(city, which_method, gamma, cap, budget, unit_dist, num_rounds, perc_bus
 	bus_nodes_x, bus_edges_x = subPrep(bus_nodes, bus_edges)
  
 	# trim graph based on the current dual values
-	bus_edges_selected = set()
-	bus_nodes_selected = set()
  
 	
 	bus_edges_selected, bus_nodes_selected = trim(r_current, bud_current, node_list, cost_edges, cap, gamma, bus_edges, bus_nodes_x, bus_edges_x, mip_gap, time_limit, num_sol, max_travel, num_bus_edges_selected)
@@ -509,8 +507,6 @@ def main(city, which_method, gamma, cap, budget, unit_dist, num_rounds, perc_bus
   
   
 		# trim graph based on the current dual values
-		bus_edges_selected = set()
-		bus_nodes_selected = set()
   
 		bus_edges_selected, bus_nodes_selected = trim(r_current, bud_current, node_list, cost_edges, cap, gamma, bus_edges, bus_nodes_x, bus_edges_x, mip_gap, time_limit, num_sol, max_travel, num_bus_edges_selected)
  
