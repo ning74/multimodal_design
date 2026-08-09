@@ -229,7 +229,7 @@ def oneSol(h_edge):
 	relevant_edges = []
 	for i in range(len(path_generated)-1):
 		relevant_edges.append((path_generated[i], path_generated[i+1]))
-	irrevevant_edges = set(h_edge)-set(relevant_edges)
+	irrelevant_edges = set(h_edge)-set(relevant_edges)
 		
 
 
@@ -241,7 +241,7 @@ def oneSol(h_edge):
 	tour = path_generated + path_generated_rev[1:]
 
 
-	return tour, cycles_list, irrevevant_edges
+	return tour, cycles_list, irrelevant_edges
 
 
 
@@ -402,7 +402,7 @@ def main(city, which_method, gamma, cap, unit_dist, num_rounds, perc_bus_edges_s
 	  
 				
 
-				tour, cycles_list, irrevevant_edges = oneSol(x_edge)
+				tour, cycles_list, irrelevant_edges = oneSol(x_edge)
 
 
 	
@@ -413,7 +413,7 @@ def main(city, which_method, gamma, cap, unit_dist, num_rounds, perc_bus_edges_s
 					print('contains cycles')
 					break
  
-				if len(irrevevant_edges) > 0:
+				if len(irrelevant_edges) > 0:
 					print('irrelevant edges')
 					break 
   
