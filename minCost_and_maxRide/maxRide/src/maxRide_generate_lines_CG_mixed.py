@@ -126,8 +126,6 @@ def main(city, which_method, gamma, cap, budget, unit_dist, num_rounds, perc_bus
 	bus_nodes_x_relaxed, bus_edges_x_relaxed = maxRide_generate_lines_CG_relaxed.subPrep(bus_nodes, bus_edges)
 
 	# trim graph based on the current dual values
-	bus_edges_selected_relaxed = set()
-	bus_nodes_selected_relaxed = set()
 	
 	bus_edges_selected_relaxed, bus_nodes_selected_relaxed = maxRide_generate_lines_CG_relaxed.trim(r_current, bud_current_relaxed, node_list, cost_edges, cap, gamma, bus_edges, bus_nodes_x_relaxed, bus_edges_x_relaxed, mip_gap, time_limit, num_sol, max_travel, num_bus_edges_selected)
  
@@ -240,8 +238,6 @@ def main(city, which_method, gamma, cap, budget, unit_dist, num_rounds, perc_bus
 			bus_nodes_x_relaxed, bus_edges_x_relaxed = maxRide_generate_lines_CG_relaxed.subPrep(bus_nodes, bus_edges)
    
 			# trim graph based on the current dual values
-			bus_edges_selected_relaxed = set()
-			bus_nodes_selected_relaxed = set()
    
 			bus_edges_selected_relaxed, bus_nodes_selected_relaxed = maxRide_generate_lines_CG_relaxed.trim(r_current, bud_current_relaxed, node_list, cost_edges, cap, gamma, bus_edges, bus_nodes_x_relaxed, bus_edges_x_relaxed, mip_gap, time_limit, num_sol, max_travel, num_bus_edges_selected)
    
