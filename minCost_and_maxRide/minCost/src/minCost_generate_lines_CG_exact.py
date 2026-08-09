@@ -556,8 +556,6 @@ def main(city, which_method, which_trim, gamma, cap, unit_dist, num_rounds, perc
 
 
 		# get a new trimmed graph from the dual 
-		bus_edges_selected = set()
-		bus_nodes_selected = set()
 
 		bus_edges_selected, bus_nodes_selected =  trim(k_current, p_current, cap, gamma, bus_nodes, bus_nodes_x, ori_nodes, cost_edges, bus_edges, bus_edges_x,\
 							   sBs_list, list_p_sv, dict_bus_to, dict_bus_from, dict_bus_to_x, dict_bus_from_x, num_bus_edges_selected, max_travel)
