@@ -499,8 +499,6 @@ def main(city, which_method, which_trim, gamma, cap, budget, unit_dist, num_roun
 	
 
 	# trim graph based on the current dual values
-	bus_edges_selected = set()
-	bus_nodes_selected = set()
 
 	bus_edges_selected, bus_nodes_selected =  trim(k_current, p_current, bud_current, cap, gamma, bus_nodes, bus_nodes_x, ori_nodes, cost_edges, bus_edges, bus_edges_x,\
 							   sBs_list, list_p_sv, dict_bus_to, dict_bus_from, dict_bus_to_x, dict_bus_from_x, num_bus_edges_selected, max_travel)
@@ -608,8 +606,6 @@ def main(city, which_method, which_trim, gamma, cap, budget, unit_dist, num_roun
 		bus_nodes_x, bus_edges_x, dict_bus_to, dict_bus_from, dict_bus_to_x, dict_bus_from_x, sBs_list, list_p_sv = subPrep(bus_nodes, bus_edges, ori_nodes, flex_dist, cost_edges, od_pairs)
 
 		# get a new trimmed graph from the dual 
-		bus_edges_selected = set()
-		bus_nodes_selected = set()
 
 		bus_edges_selected, bus_nodes_selected =  trim(k_current, p_current, bud_current, cap, gamma, bus_nodes, bus_nodes_x, ori_nodes, cost_edges, bus_edges, bus_edges_x,\
 							   sBs_list, list_p_sv, dict_bus_to, dict_bus_from, dict_bus_to_x, dict_bus_from_x, num_bus_edges_selected, max_travel)
