@@ -56,7 +56,7 @@ pip install -r requirements.txt
 
 The per-city `.pkl` files in `data/<City>/` are the results of this step, so the optimization can be run directly and **this step can be skipped entirely**.
 
-**Where to find the raw trip-request CSVs.** The raw CSVs (`temp_requests_<city>.csv`, ~110 MB total) are not tracked in this repository. They are attached to the [`v1.0-data` release](https://github.com/<user>/<repo>/releases/tag/v1.0-data) as `temp_requests.zip`. The requests are synthetic demand generated from public US Census [LODES](https://lehd.ces.census.gov/data/) origin–destination data using [scripts-for-simulator](https://github.com/DMadhuranga/scripts-for-simulator); they are only needed if you want to re-run the preprocessing yourself. To set them up:
+**Where to find the raw trip-request CSVs.** The raw CSVs (`temp_requests_<city>.csv`, ~110 MB total) are not tracked in this repository. They are attached to the [`v1.0-data` release](https://github.com/ning74/multi_design/releases/tag/v1.0-data) as `temp_requests.zip`. The requests are synthetic demand generated from public US Census [LODES](https://lehd.ces.census.gov/data/) origin–destination data using [scripts-for-simulator](https://github.com/DMadhuranga/scripts-for-simulator); they are only needed if you want to re-run the preprocessing yourself. To set them up:
 
 ```bash
 curl -L -o temp_requests.zip https://github.com/ning74/multimodal_design/releases/download/v1.0-data/temp_requests.zip
