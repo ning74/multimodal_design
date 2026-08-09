@@ -1,0 +1,17 @@
+# Tested with Python 3.9.
+
+# Optimization pipeline
+gurobipy==12.0.1
+networkx==3.2.1
+numpy==1.26.4
+pandas==2.2.3
+dill==0.3.9
+scipy==1.13.1
+matplotlib==3.9.4
+
+# Preprocessing only (data/process_demand.py)
+osmnx==2.0.1
+geopandas==1.0.1
+geopy==2.4.1
+folium==0.19.4
+scikit-learn==1.6.1

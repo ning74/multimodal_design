@@ -1,0 +1,40 @@
+# Run outputs
+col_gen_output/
+opt_result/
+heur_output/
+heur_output_cheaperTaxi/
+*.log
+*.mps
+*.lp
+*.sol
+
+# SLURM job scripts and logs
+# (delete the run_*.sub line if you want to publish the submit scripts)
+run_*.sub
+run_*.out
+run_*.err
+
+# Raw data hosted in the release, not in git
+temp_requests_*.csv
+
+# Preprocessing intermediates (process_demand.py)
+*.gpickle
+df.csv
+df_reassign.csv
+df_reassign_throw.csv
+selected_key.pkl
+selected_matched_network.pkl
+lats_deg_filtered.pkl
+lons_deg_filtered.pkl
+*.pdf
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Editors / OS
+.DS_Store
+.idea/
+.vscode/
