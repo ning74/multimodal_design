@@ -121,8 +121,6 @@ def main(city, which_method, gamma, cap, unit_dist, num_rounds, perc_bus_edges_s
 	bus_nodes_x_relaxed, bus_edges_x_relaxed = minCost_generate_lines_CG_relaxed.subPrep(bus_nodes, bus_edges)
  
 	# trim graph based on the current dual values
-	bus_edges_selected_relaxed = set()
-	bus_nodes_selected_relaxed = set()
  
 	bus_edges_selected_relaxed, bus_nodes_selected_relaxed = minCost_generate_lines_CG_relaxed.trim(r_current, bus_nodes, cost_edges, cap, gamma, bus_edges, bus_nodes_x_relaxed, bus_edges_x_relaxed, max_travel, num_bus_edges_selected)
  
@@ -326,8 +324,6 @@ def main(city, which_method, gamma, cap, unit_dist, num_rounds, perc_bus_edges_s
 			bus_nodes_x_exact, bus_edges_x_exact, dict_bus_to, dict_bus_from, dict_bus_to_x, dict_bus_from_x, sBs_list, list_p_sv = minCost_generate_lines_CG_exact.subPrep(bus_nodes, bus_edges, ori_nodes, flex_dist, cost_edges, od_pairs)
 
 			# get a new trimmed graph from the dual 
-			bus_edges_selected_exact = set()
-			bus_nodes_selected_exact = set()
    
 		
    
