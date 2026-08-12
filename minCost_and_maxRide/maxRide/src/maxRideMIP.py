@@ -136,7 +136,6 @@ def getResult(node_list, od_pairs, ori_nodes, dest_nodes, lines, lines_edge, cos
 
 def main(city, gamma, alpha, cap, unit_dist, saved_folder, budget, mip_gap, mip_focus, time_limit, transit): 
     
-    
 	node_list, od_pairs, od_demands, lines, pair_lineInd_dict, dict_stlInd_uInd, ori_nodes, dest_nodes, demand_dic,\
 	cost_edges, cost_lines, cap_lines, bus_nodes, bus_edges = instance.main(city, 'final', gamma, cap, unit_dist, saved_folder, include_naive=False, len_naive=-1, cost_factor_naive=-1)
 
@@ -144,14 +143,25 @@ def main(city, gamma, alpha, cap, unit_dist, saved_folder, budget, mip_gap, mip_
 	lines_edge, list_f_sluv, list_y_slv, list_w_slv, list_z_stv, list_z, st_dict, ls_dict, svl_dict, z_uvs_dict, y_uvl_dict = maxRideLP.LPPrep(lines, node_list, ori_nodes, bus_nodes, od_pairs, dict_stlInd_uInd)
 	
 	# write gurobi log file
-	log_name = result_path(city, 'heur_log[city@{}|alpha@{}|budget@{}|mip_gap@{}|mip_focus@{}|time_limit@{}].txt'\
-		.format(city, alpha, budget, mip_gap, mip_focus, time_limit))
+	log_name = result_path(city, 'heur_log[city@{}|gamma@{}|cap@{}|budget@{}|mip_gap@{}|mip_focus@{}|time_limit@{}|saved_folder@{}].txt'\
+		.format(city, gamma, cap, budget, mip_gap, mip_focus, time_limit, saved_folder))
 	
 
 	# run once 
 	m_MIP, obj_MIP, C4_toRemove_MIP, C5_toRemove_MIP, C8_toRemove_MIP, f_MIP, y_MIP, w_MIP, z_MIP, q_MIP, x_MIP, Y_MIP = getResult(node_list, od_pairs, ori_nodes, dest_nodes, lines, lines_edge, cost_edges, cost_lines, demand_dic, cap_lines,\
 			budget, list_f_sluv, list_y_slv, list_w_slv, list_z_stv, list_z, bus_nodes, st_dict, ls_dict, svl_dict, z_uvs_dict, y_uvl_dict, mip_gap, log_name, cap, mip_focus, time_limit, alpha, transit)
 	
+	# write gurobi optimal solutions
+	path_name = result_path(city, 'heur_optSol[city@{}|gamma@{}|cap@{}|budget@{}|mip_gap@{}|mip_focus@{}|time_limit@{}|saved_folder@{}].txt'\
+			.format(city, gamma, cap, budget, mip_gap, mip_focus, time_limit, saved_folder))
+		
+	 
+	 
+	with open(path_name, "w") as file:
+		file.write(f"Objective Value = {m_MIP.ObjVal}\n")
+		for v in m_MIP.getVars():
+				# Write each line to the file
+			file.write(f"{v.VarName} = {v.X}\n")	
 
 
 
