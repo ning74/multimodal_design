@@ -52,8 +52,8 @@ def main(city, gamma, cap, budget, flex_dist, mip_gap, unit_dist, top, bottom, s
 	
  
 	# write gurobi optimal solutions
-	path_name = result_path(city, 'heur_optSol_taxiOnly[city@{}|alpha@{}|budget@{}|mip_gap@{}|top@{}|bottom@{}|firstSelect@{}|secondSelectStep@{}|num_finalLines@{}|mip_focus@{}|time_limit@{}].txt'\
-		.format(city, alpha, budget, mip_gap, top, bottom, firstSelect, secondSelectStep, num_finalLines, mip_focus, time_limit))
+	path_name = result_path(city, 'heur_optSol_taxiOnly[city@{}|alpha@{}|budget@{}|mip_gap@{}|top@{}|bottom@{}|firstSelect@{}|secondSelectStep@{}|num_finalLines@{}|mip_focus@{}|time_limit@{}|saved_folder@{}].txt'\
+		.format(city, alpha, budget, mip_gap, top, bottom, firstSelect, secondSelectStep, num_finalLines, mip_focus, time_limit, saved_folder))
 		
 	with open(path_name, "w") as file:
 		file.write(f"Objective Value = {m_int.ObjVal}\n")
@@ -332,8 +332,8 @@ def main(city, gamma, cap, budget, flex_dist, mip_gap, unit_dist, top, bottom, s
 	lines_edge, list_f_sluv, list_y_slv, list_w_slv, list_z_stv, list_z, st_dict, ls_dict, svl_dict, z_uvs_dict, y_uvl_dict = maxRideLP.LPPrep(lines_current, node_list, ori_nodes, bus_nodes, od_pairs, dict_stlInd_uInd_current)
 
 	# write gurobi log file
-	log_name = result_path(city, 'heur_log[city@{}|alpha@{}|budget@{}|mip_gap@{}|top@{}|bottom@{}|firstSelect@{}|secondSelectStep@{}|num_finalLines@{}|mip_focus@{}|time_limit@{}].txt'\
-		.format(city, alpha, budget, mip_gap, top, bottom, firstSelect, secondSelectStep, num_finalLines, mip_focus, time_limit))
+	log_name = result_path(city, 'heur_log[city@{}|alpha@{}|budget@{}|mip_gap@{}|top@{}|bottom@{}|firstSelect@{}|secondSelectStep@{}|num_finalLines@{}|mip_focus@{}|time_limit@{}|saved_folder@{}].txt'\
+		.format(city, alpha, budget, mip_gap, top, bottom, firstSelect, secondSelectStep, num_finalLines, mip_focus, time_limit, saved_folder))
 	
 	# run once 
 	m_MIP, obj_MIP, C4_toRemove_MIP, C5_toRemove_MIP, C8_toRemove_MIP, f_MIP, y_MIP, w_MIP, z_MIP, q_MIP, x_MIP, Y_MIP = maxRideMIP.getResult(node_list, od_pairs, ori_nodes, dest_nodes, lines_current, lines_edge, cost_edges, cost_lines_current, demand_dic, cap_lines_current,\
@@ -342,8 +342,8 @@ def main(city, gamma, cap, budget, flex_dist, mip_gap, unit_dist, top, bottom, s
  
 	
 	# write gurobi optimal solutions
-	path_name = result_path(city, 'heur_optSol[city@{}|alpha@{}|budget@{}|mip_gap@{}|top@{}|bottom@{}|firstSelect@{}|secondSelectStep@{}|num_finalLines@{}|mip_focus@{}|time_limit@{}].txt'\
-		.format(city, alpha, budget, mip_gap, top, bottom, firstSelect, secondSelectStep, num_finalLines, mip_focus, time_limit))
+	path_name = result_path(city, 'heur_optSol[city@{}|alpha@{}|budget@{}|mip_gap@{}|top@{}|bottom@{}|firstSelect@{}|secondSelectStep@{}|num_finalLines@{}|mip_focus@{}|time_limit@{}|saved_folder@{}].txt'\
+		.format(city, alpha, budget, mip_gap, top, bottom, firstSelect, secondSelectStep, num_finalLines, mip_focus, time_limit, saved_folder))
 		
 	with open(path_name, "w") as file:
 		file.write(f"Objective Value = {m_MIP.ObjVal}\n")
