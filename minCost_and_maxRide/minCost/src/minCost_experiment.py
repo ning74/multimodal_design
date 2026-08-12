@@ -61,7 +61,7 @@ if __name__ == "__main__":
 	parser.add_argument('--max_travel', required=True) # 20000  
 	parser.add_argument('--saved_folder', required=True) # multimodal_budget
 	parser.add_argument('--detour_coeff', required=True) # 2
-	parser.add_argument('--num_rounds', required=True) # 800
+	parser.add_argument('--num_rounds', required=True) # 160
 	parser.add_argument('--mip_gap', required=True) # 0.05
 	parser.add_argument('--num_sol', required=True) # 5
 	parser.add_argument('--time_limit', required=True) # 600
