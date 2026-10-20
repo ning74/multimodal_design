@@ -85,7 +85,7 @@ python minCost_experiment.py \
   --city Boston --gamma 5 --cap 50 --unit_dist 4000 --flex_dist 1000 \
   --max_travel 20000 --saved_folder multimodal_budget --detour_coeff 2 \
   --num_rounds 800 --mip_gap 0.05 --num_sol 5 --time_limit 600 \
-  --cost_factor_naive 10000 --demand_perc 0.9
+  --cost_factor_naive 100 --demand_perc 0.9
 ```
 
 **maxRide** (maximize ridership under a budget; add `--transit` for a bus-only system), e.g.:
@@ -97,7 +97,7 @@ python maxRide_experiment.py \
   --unit_dist 4000 --flex_dist 1000 --max_travel 20000 \
   --saved_folder multimodal_gamma5_alpha1 --detour_coeff 2 \
   --num_rounds 800 --mip_gap 0.05 --num_sol 5 --time_limit 600 \
-  --cost_factor_naive 10000
+  --cost_factor_naive 100
 ```
 
 Generated line sets and index dictionaries are pickled to `col_gen_output/<city>/<saved_folder>/` under the corresponding subproject (`minCost/` or `maxRide/`) (e.g. `lines_final.pkl`, `pair_lineInd_dict_final.pkl`, `dict_stlInd_uInd_final.pkl`). `maxRide_experiment_benchmark.py` builds the benchmark baseline for comparison.
